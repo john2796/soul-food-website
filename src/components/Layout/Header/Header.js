@@ -6,7 +6,9 @@ import Wrapper from '../../../Styles/Wrapper';
 // style Starts here
 const HeaderMain = styled.header`
   /* background: rgba(12,12,13,0.78); */
-  background: black;
+  /* background: black; */
+  background-color: transparent;
+
  .wrapper {
   display: flex;
   justify-content:space-between;
