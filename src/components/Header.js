@@ -15,6 +15,8 @@ const HeaderMain = styled.header`
  nav a ,div a{ 
    color: white;
    text-decoration: none;
+   font-size: 1.6rem;
+   color: red;
  }
  nav { 
    display: flex;
