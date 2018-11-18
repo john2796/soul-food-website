@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components'
-import Wrapper from '../Styles/Wrapper';
+import Wrapper from '../../../Styles/Wrapper';
+
 
 // style Starts here
 const HeaderMain = styled.header`
@@ -13,10 +14,12 @@ const HeaderMain = styled.header`
   padding: 30px 0;
  }
  nav a ,div a{ 
-   color: white;
+   color: #ffff;
    text-decoration: none;
    font-size: 1.6rem;
-   color: red;
+   &:hover { 
+     color: #c0a756;
+   }
  }
  nav { 
    display: flex;
@@ -29,6 +32,7 @@ const HeaderMain = styled.header`
 const Header = (props) => {
   return (
     <>
+      {/* Header starts Here Navbar */}
       <HeaderMain>
         <Wrapper className="wrapper">
           <div><a href="..">Logo</a></div>
@@ -42,6 +46,7 @@ const Header = (props) => {
           </nav>
         </Wrapper>
       </HeaderMain>
+      {/* Header Ends Here Here Navbar */}
     </>
   );
 }

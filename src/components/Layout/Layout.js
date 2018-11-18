@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import Header from '../Header';
-import { Button } from 'reactstrap';
+import Header from './Header/Header';
+import Carousel from './Carousel.js/Carousel/Carousel';
+
 
 
 
@@ -10,7 +11,7 @@ class Layout extends Component {
     return (
       <>
         <Header />
-        <Button color="danger">Danger!</Button>
+        <Carousel />
       </>
     );
   }
