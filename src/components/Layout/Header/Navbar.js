@@ -19,7 +19,6 @@ const NavWrapper = styled.div`
  nav a ,div a{ 
   color: #F0F0EF;
    text-decoration: none;
-   font-size: 1.1rem;
    font-family:'Open-sans',sans-serif;
    &:hover { 
      color: #c0a756;
@@ -27,11 +26,17 @@ const NavWrapper = styled.div`
  }
  nav { 
    display: flex;
-   width: 43%;
    justify-content: space-between;
-
+   width: 58%;
+   @media (max-width: 1030px){  
+     width: 43%;
+   }
    a { 
      text-transform: uppercase;
+     font-size: 1.35rem;
+    @media (max-width: 1030px){  
+     font-size: 1.1rem;
+    }
    }
    .nav__active { 
      color:#c0a756;
@@ -47,7 +52,6 @@ const NavWrapper = styled.div`
    font-weight: 100;
    letter-spacing: 3px;
  }
-
 `
 // style Ends here
 

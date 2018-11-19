@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from './Header/Header';
+import About from './about/About';
 
 class Layout extends Component {
   state = {}
@@ -7,7 +8,7 @@ class Layout extends Component {
     return (
       <>
         <Header />
-        <h1>testing</h1>
+        <About />
       </>
     );
   }

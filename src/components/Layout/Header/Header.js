@@ -6,15 +6,10 @@ import {
   Carousel,
   CarouselItem,
   CarouselControl,
-  CarouselIndicators,
-  CarouselCaption
 } from 'reactstrap';
 
 import arrow from '../../../assets/arrow.png'
 import carousel from '../../../assets/carousel.png'
-
-
-
 
 // styling 
 const HeaderWrapper = styled.header`
@@ -37,30 +32,57 @@ position: relative;
   background:rgba(0,0,0,0.5);
   text-align: center;
   color: #fff;
-  border: 1px solid red;
 }
   .carousel__h3 { 
     font-family: 'Libre Baskerville', serif;
     font-style: italic;
     font-weight: 100;
+    color: rgba(255, 255, 255, 0.999);
+    font-size: 2rem;
+    margin-bottom: 100px;
   }
  .carousel__mainImage { 
    margin-top: 250px;
  }
  .carousel__caption { 
-  font-size: 3.5rem;
-  text-transform: uppercase;
-  padding-top: 80px;
-  letter-spacing: 4px;
-  font-family: 'Oswald', sans-serif;
-  font-weight: 200;
-
-
+   text-transform: uppercase;
+   padding-top: 80px;
+   letter-spacing: 4px;
+   font-family: 'Oswald', sans-serif;
+   font-size: 6.5rem;
+   font-weight: 100;
+   @media (max-width: 1030px){ 
+      font-weight: 200;
+      font-size: 3.5rem;  
+    }
   }
- .carousel__arrow { 
-   margin: 19px 0;
+ .carousel__arrow {
+  padding: 45px 0; 
+   @media (max-width: 1030px) {
+    margin: 19px 0;
+    }
  }
-
+ .carousel__arrowDown { 
+    padding: 18.5px 15.5px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    .fa-angle-down { 
+      color: #ffff;
+      font-size: 3rem;
+      animation: bounce 2s infinite;
+      @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+          transform: translateY(12px);
+        }
+        40% {
+          transform: translateY(-10px);
+        }
+        60% {
+          transform: translateY(15px);
+        }
+      }
+    }
+  }
 `
 
 
@@ -89,31 +111,30 @@ const items = [
 class Header extends Component {
   state = { activeIndex: 0 };
 
+  onExiting = () => {
+    this.animating = true;
+  }
 
-  // onExiting = () => {
-  //   this.animating = true;
-  // }
+  onExited = () => {
+    this.animating = false;
+  }
 
-  // onExited = () => {
-  //   this.animating = false;
-  // }
+  next = () => {
+    if (this.animating) return;
+    const nextIndex = this.state.activeIndex === items.length - 1 ? 0 : this.state.activeIndex + 1;
+    this.setState({ activeIndex: nextIndex });
+  }
 
-  // next = () => {
-  //   if (this.animating) return;
-  //   const nextIndex = this.state.activeIndex === items.length - 1 ? 0 : this.state.activeIndex + 1;
-  //   this.setState({ activeIndex: nextIndex });
-  // }
+  previous = () => {
+    if (this.animating) return;
+    const nextIndex = this.state.activeIndex === 0 ? items.length - 1 : this.state.activeIndex - 1;
+    this.setState({ activeIndex: nextIndex });
+  }
 
-  // previous = () => {
-  //   if (this.animating) return;
-  //   const nextIndex = this.state.activeIndex === 0 ? items.length - 1 : this.state.activeIndex - 1;
-  //   this.setState({ activeIndex: nextIndex });
-  // }
-
-  // goToIndex = (newIndex) => {
-  //   if (this.animating) return;
-  //   this.setState({ activeIndex: newIndex });
-  // }
+  goToIndex = (newIndex) => {
+    if (this.animating) return;
+    this.setState({ activeIndex: newIndex });
+  }
 
   render() {
     const { activeIndex } = this.state;
@@ -132,6 +153,11 @@ class Header extends Component {
             <h1 className="carousel__caption">{item.caption}</h1>
             <img src={arrow} alt="arrow" className="carousel__arrow" />
             <h3 className="carousel__h3">The Chef creates divine combinations</h3>
+            <span className="carousel__arrowDown">
+              <a href="#about">
+                <i className="fas fa-angle-down"></i>
+              </a>
+            </span>
           </div>
         </CarouselItem>
       );
@@ -146,7 +172,6 @@ class Header extends Component {
             next={this.next}
             previous={this.previous}
           >
-            <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
             {slides}
             <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previous} />
             <CarouselControl direction="next" directionText="Next" onClickHandler={this.next} />
