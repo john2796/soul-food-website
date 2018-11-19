@@ -3,8 +3,6 @@ import styled from 'styled-components'
 import Wrapper from '../../../Styles/Wrapper';
 
 
-
-// style Starts here
 const NavWrapper = styled.div`
  background: transparent;
  position: absolute;
@@ -21,16 +19,23 @@ const NavWrapper = styled.div`
  nav a ,div a{ 
   color: #F0F0EF;
    text-decoration: none;
-   font-size: 1.6rem;
-   font-family:'Open-sans';
+   font-size: 1.1rem;
+   font-family:'Open-sans',sans-serif;
    &:hover { 
      color: #c0a756;
    }
  }
  nav { 
    display: flex;
-   width: 48%;
+   width: 43%;
    justify-content: space-between;
+
+   a { 
+     text-transform: uppercase;
+   }
+   .nav__active { 
+     color:#c0a756;
+   }
  }
  .navbar__content-overlay { 
   background:rgba(0,0,0,0.60);
@@ -59,7 +64,7 @@ const Navbar = (props) => {
               </a>
             </div>
             <nav>
-              <a href="..">Home</a>
+              <a href=".." className="nav__active">Home</a>
               <a href="..">About</a>
               <a href="..">Menu</a>
               <a href="..">Gallery</a>

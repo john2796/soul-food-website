@@ -44,10 +44,22 @@ position: relative;
     font-style: italic;
     font-weight: 100;
   }
-    .carousel__mainImage { 
-      margin-top: 250px;
-      border: 1px solid red;
-    }
+ .carousel__mainImage { 
+   margin-top: 250px;
+ }
+ .carousel__caption { 
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  padding-top: 80px;
+  letter-spacing: 4px;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 200;
+
+
+  }
+ .carousel__arrow { 
+   margin: 19px 0;
+ }
 
 `
 
@@ -58,19 +70,19 @@ const items = [
     id: 1,
     src: 'https://images.pexels.com/photos/566566/pexels-photo-566566.jpeg?auto=compress&cs=tinysrgb&h=1000',
     altText: 'Slide 1',
-    caption: 'Slide 1'
+    caption: 'elixir exclusively food'
   },
   {
     id: 2,
     src: 'https://images.pexels.com/photos/54455/cook-food-kitchen-eat-54455.jpeg?auto=compress&cs=tinysrgb&h=1000',
     altText: 'Slide 2',
-    caption: 'Slide 2'
+    caption: 'welcome to restaurant'
   },
   {
     id: 3,
     src: 'https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&h=1000',
     altText: 'Slide 3',
-    caption: 'Slide 3'
+    caption: 'the soul food & bistro'
   }
 ];
 
@@ -117,8 +129,8 @@ class Header extends Component {
           <img src={item.src} alt={item.altText} className="carousel__image" />
           <div className="carousel__content">
             <img src={carousel} alt="dinning" className="carousel__mainImage" />
-            <h1>{item.caption}</h1>
-            <img src={arrow} alt="arrow" />
+            <h1 className="carousel__caption">{item.caption}</h1>
+            <img src={arrow} alt="arrow" className="carousel__arrow" />
             <h3 className="carousel__h3">The Chef creates divine combinations</h3>
           </div>
         </CarouselItem>

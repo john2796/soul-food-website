@@ -14,3 +14,14 @@ class Layout extends Component {
 }
 
 export default Layout;
+
+
+
+/* NOTES
+started coding at this vieweport
+width 987px
+wrapper max-width: 895px;
+
+
+
+*/
