@@ -155,25 +155,31 @@ h3,
 h4,
 h5 {
   font-family: 'Open Sans', sans-serif;
+  color: #F0F0EF;
 }
 
 h1 {
   font-size: 4rem;
+  color: #F0F0EF;
 }
 
 h2 {
   font-size: 3.2rem;
   padding-bottom: 10px;
+  color: #F0F0EF;
 }
 
 h4 {
   font-size: 2.5rem;
   padding-bottom: 10px;
+  color: #F0F0EF;
 }
 
 nav a,
 a {
   font-size: 1.6rem;
+  font-family: 'Open Sans', sans-serif;
+  color: #F0F0EF;
 }
 
 p {

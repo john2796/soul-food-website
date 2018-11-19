@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import Carousel from './Carousel/Carousel';
+import Header from './Header/Header';
 
 class Layout extends Component {
   state = {}
   render() {
     return (
       <>
-        <Carousel />
+        <Header />
         <h1>testing</h1>
       </>
     );
