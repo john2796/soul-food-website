@@ -34,6 +34,7 @@ const NavWrapper = styled.div`
    a { 
      text-transform: uppercase;
      font-size: 1.35rem;
+     padding: 13px 10px;
     @media (max-width: 1030px){  
      font-size: 1.1rem;
     }

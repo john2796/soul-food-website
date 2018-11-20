@@ -85,8 +85,6 @@ position: relative;
   }
 `
 
-
-
 const items = [
   {
     id: 1,
