@@ -6,8 +6,8 @@ import Wrapper from '../../../theme/Wrapper';
 
 const NavWrapper = styled.div`
  background: transparent;
- position: absolute;
- z-index: 1001;
+ position: fixed;
+ z-index: 999;
  width: 100%;
  top: 0;
   left: 0;
@@ -57,12 +57,30 @@ const NavWrapper = styled.div`
 `
 
 class Navbar extends Component {
+  // toggleFixedNav = () => {
+  //   // Get scroll position
+  //   var scroll = window.pageYOffset || document.documentElement.scrollTop;
+
+  //   // Check if we scrolled more than 200 pixels
+  //   if (scroll > 200) {
+  //     // If we scrolled more than 200 px
+  //     // then add a class to the body
+  //     //
+  //     // Note: Using CSS, set the .fixed #header to positon: fixed;
+  //     if (body.className !== "fixed")
+  //       body.className = "fixed";
+  //   } else {
+  //     // If scroll is less than 200px, remove the className
+  //     body.className = "";
+  //   }
+  // }
+
   render() {
     return (
       <>
         {/* Header starts Here Navbar */}
         <NavWrapper>
-          <div className="navbar__content-overlay">
+          <div className="navbar__content-overlay" >
             <Wrapper className="wrapper">
               <div>
                 <a href="logo" className="navbar__logo" >
