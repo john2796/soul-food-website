@@ -39,7 +39,7 @@ position: relative;
     font-weight: 100;
     color: rgba(255, 255, 255, 0.999);
     font-size: 2rem;
-    margin-bottom: 12rem;
+    margin-bottom: 3rem;
   }
  .carousel__mainImage { 
    margin-top: 250px;
@@ -62,23 +62,24 @@ position: relative;
     margin: 19px 0;
     }
  }
- .carousel__arrowDown { 
-    padding: 18.5px 15.5px;
+ .carousel__go-down { 
+    padding: 11.5px 15.5px;
     border-radius: 50%;
     border: 2px solid #fff;
     .fa-angle-down { 
       color: #ffff;
-      font-size: 3rem;
-      animation: bounce 2s infinite;
-      @keyframes bounce {
-        0%, 20%, 50%, 80%, 100% {
-          transform: translateY(12px);
+      font-size: 2rem;
+      animation-duration: 1s;
+      animation-iteration-count: infinite;
+      animation-name: scroll;
+      @keyframes scroll {
+        0% {
+          opacity: 0;
+          transform: translateY(-18px)
         }
-        40% {
-          transform: translateY(-10px);
-        }
-        60% {
-          transform: translateY(15px);
+        100% {
+          opacity: 1;
+          transform: translateY(14px)
         }
       }
     }
@@ -151,11 +152,9 @@ class Header extends Component {
             <h1 className="carousel__caption">{item.caption}</h1>
             <img src={arrow} alt="arrow" className="carousel__arrow" />
             <h3 className="carousel__h3">The Chef creates divine combinations</h3>
-            <span className="carousel__arrowDown">
-              <a href="#about">
-                <i className="fas fa-angle-down"></i>
-              </a>
-            </span>
+            <a className="carousel__go-down" href="#about">
+              <i className="fas fa-angle-down"></i>
+            </a>
           </div>
         </CarouselItem>
       );
