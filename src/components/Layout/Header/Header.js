@@ -39,7 +39,7 @@ position: relative;
     font-weight: 100;
     color: rgba(255, 255, 255, 0.999);
     font-size: 2rem;
-    margin-bottom: 100px;
+    margin-bottom: 12rem;
   }
  .carousel__mainImage { 
    margin-top: 250px;

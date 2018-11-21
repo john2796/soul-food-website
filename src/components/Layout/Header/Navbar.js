@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components'
-import Wrapper from '../../../Styles/Wrapper';
+import Wrapper from '../../../theme/Wrapper';
+
 
 
 const NavWrapper = styled.div`
@@ -27,13 +28,13 @@ const NavWrapper = styled.div`
  nav { 
    display: flex;
    justify-content: space-between;
-   width: 58%;
+   width: 576px;
    @media (max-width: 1030px){  
      width: 43%;
    }
    a { 
      text-transform: uppercase;
-     font-size: 1.35rem;
+     font-size: 1.34rem;
      padding: 13px 10px;
     @media (max-width: 1030px){  
      font-size: 1.1rem;
@@ -54,34 +55,35 @@ const NavWrapper = styled.div`
    letter-spacing: 3px;
  }
 `
-// style Ends here
 
-const Navbar = (props) => {
-  return (
-    <>
-      {/* Header starts Here Navbar */}
-      <NavWrapper>
-        <div className="navbar__content-overlay">
-          <Wrapper className="wrapper">
-            <div>
-              <a href="logo" className="navbar__logo">
-                Miranda
+class Navbar extends Component {
+  render() {
+    return (
+      <>
+        {/* Header starts Here Navbar */}
+        <NavWrapper>
+          <div className="navbar__content-overlay">
+            <Wrapper className="wrapper">
+              <div>
+                <a href="logo" className="navbar__logo" >
+                  Miranda
               </a>
-            </div>
-            <nav>
-              <a href=".." className="nav__active">Home</a>
-              <a href="..">About</a>
-              <a href="..">Menu</a>
-              <a href="..">Gallery</a>
-              <a href="..">Reservations</a>
-              <a href="..">Location</a>
-            </nav>
-          </Wrapper>
-        </div>
-      </NavWrapper>
-      {/* Header Ends Here Here Navbar */}
-    </>
-  );
+              </div>
+              <nav>
+                <a href=".." className="nav__active">Home</a>
+                <a href="..">About</a>
+                <a href="..">Menu</a>
+                <a href="..">Gallery</a>
+                <a href="..">Reservations</a>
+                <a href="..">Location</a>
+              </nav>
+            </Wrapper>
+          </div>
+        </NavWrapper>
+        {/* Header Ends Here Here Navbar */}
+      </>
+    );
+  }
 }
 
 export default Navbar;

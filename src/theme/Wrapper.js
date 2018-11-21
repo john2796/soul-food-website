@@ -2,8 +2,9 @@ import styled from 'styled-components';
 
 const Wrapper = styled.div`
 /* Desktop  */
-max-width: 900px;
+max-width: 1000px;
 margin: 0 auto;
+
 
  /* laptop */
  @media (max-width: 1030px){
