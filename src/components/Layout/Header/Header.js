@@ -89,7 +89,7 @@ position: relative;
 const items = [
   {
     id: 1,
-    src: 'https://images.pexels.com/photos/566566/pexels-photo-566566.jpeg?auto=compress&cs=tinysrgb&h=1000',
+    src: 'https://images.pexels.com/photos/1095550/pexels-photo-1095550.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     altText: 'Slide 1',
     caption: 'elixir exclusively food'
   },

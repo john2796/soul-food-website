@@ -8,6 +8,8 @@ const AboutWrapper = styled.div`
 
 `
 
+// 1042 width screen size i'm first working on 
+
 class About extends Component {
   state = {}
   render() {
